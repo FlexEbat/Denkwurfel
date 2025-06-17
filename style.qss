@@ -1,0 +1,488 @@
+/* =================================================================== */
+/* КЛАССИЧЕСКАЯ СВЕТЛАЯ ТЕМА                    */
+/* =================================================================== */
+
+/* Общие стили */
+QMainWindow, QWidget {
+    background-color: #F7F8FA; /* Очень светлый серый фон */
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #333333; /* Основной темный цвет текста */
+}
+
+/* Левая панель */
+#LeftPanel {
+    background-color: #FFFFFF;
+    border-right: 1px solid #EAEAEA;
+}
+#AppTitle {
+    color: #1A1A1A;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px 0 5px 5px;
+}
+
+#LeftPanel #SearchBar {
+    background-color: #F5F5F5;
+    border: 1px solid #EAEAEA;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 13px;
+}
+#LeftPanel #SearchBar:focus {
+    border: 1px solid #0078D7;
+}
+
+#TasksNavWidget {
+    background-color: #FFFFFF;
+}
+
+#NavList {
+    border: none;
+    font-size: 14px;
+    outline: 0;
+    background-color: #FFFFFF;
+}
+#NavList::item {
+    padding: 10px;
+    border-radius: 6px;
+    min-height: 25px; 
+}
+#NavList::item:hover {
+    background-color: #F0F0F0;
+}
+#NavList::item:selected {
+    background-color: #E8F0FE;
+    color: #0063B1;
+    font-weight: bold;
+}
+
+#NavHeaderLabel {
+    color: #606060;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 10px 0px 5px 10px;
+}
+
+#TagCount {
+    background-color: #EAEAEA;
+    color: #606060;
+    border-radius: 5px;
+    padding: 2px 6px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+
+#LeftPanel #ReportButton {
+    background-color: #F5F5F5;
+    color: #333333;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+}
+#LeftPanel #ReportButton:hover {
+    background-color: #EAEAEA;
+    border-color: #D0D0D0;
+}
+
+
+/* Центральная панель */
+#CenterPanel {
+    background-color: #FFFFFF;
+}
+#CenterTitle {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1A1A1A;
+}
+#NewTaskButton {
+    background-color: #E8F0FE;
+    color: #0078D7;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 13px;
+    font-weight: bold;
+}
+#NewTaskButton:hover {
+    background-color: #DDE8FC;
+}
+
+#SortComboBox, QComboBox {
+    border: 1px solid #E0E0E0;
+    border-radius: 6px;
+    padding: 5px;
+    font-size: 13px;
+    color: #333;
+    background-color: #FFFFFF;
+}
+#SortComboBox { /* Убираем рамку у комбобокса сортировки */
+    border: none;
+    background-color: transparent;
+}
+
+QComboBox:hover {
+    border-color: #0078D7;
+}
+
+QComboBox::drop-down {
+    border: none;
+}
+QComboBox QAbstractItemView {
+    border: 1px solid #EAEAEA;
+    background-color: #FFFFFF;
+    selection-background-color: #E8F0FE;
+    color: #333333;
+    outline: 0;
+}
+
+
+/* Стили задач */
+#ScrollArea {
+    border: none;
+    background-color: #FFFFFF;
+}
+#TaskWidget {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #F0F0F0;
+}
+#TaskWidget:hover {
+    background-color: #F8F9FA;
+}
+
+#PriorityIndicator {
+    border-radius: 2.5px;
+}
+#PriorityIndicator[priority="0"] { background-color: transparent; }
+#PriorityIndicator[priority="1"] { background-color: #77A6F7; }
+#PriorityIndicator[priority="2"] { background-color: #FFB800; }
+#PriorityIndicator[priority="3"] { background-color: #F76255; }
+
+#StatusLabel {
+    font-size: 11px;
+    font-weight: bold;
+    color: #888888;
+    background-color: #F0F0F0;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+#TaskTitle {
+    font-size: 14px;
+    font-weight: 500;
+}
+#TaskMeta {
+    color: #888888;
+    font-size: 12px;
+}
+
+#TaskWidget[completed="true"] {
+    opacity: 0.6;
+}
+#TaskWidget[completed="true"] #TaskTitle {
+    color: #888888;
+    text-decoration: line-through;
+}
+
+/* Правая панель */
+#RightPanel {
+    background-color: #FFFFFF;
+    border-left: 1px solid #EAEAEA;
+}
+#CompletedList {
+    border: none;
+    color: #888888;
+    text-decoration: line-through;
+    background-color: #FFFFFF;
+}
+#CompletedList::item {
+    padding: 5px 0px;
+}
+
+#SettingsButton {
+    background-color: transparent;
+    border: none;
+    padding: 5px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #606060;
+}
+#SettingsButton:hover {
+    background-color: #F0F0F0;
+    border-radius: 6px;
+}
+
+
+/* === ОБЩИЕ СТИЛИ ДЛЯ ВСЕХ КАЛЕНДАРЕЙ === */
+QCalendarWidget {
+    border: none;
+    background-color: #FFFFFF;
+    font-size: 13px;
+}
+QCalendarWidget QTableView {
+    background-color: #FFFFFF;
+    border: 1px solid #EAEAEA;
+    border-radius: 8px;
+    selection-background-color: #0078D7;
+    selection-color: #FFFFFF;
+    gridline-color: transparent;
+}
+QCalendarWidget QHeaderView::section:horizontal {
+    background-color: #FFFFFF;
+    border: none;
+    color: #999999;
+    padding: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+QCalendarWidget #qt_calendar_navigationbar {
+    background-color: #FFFFFF;
+    border: none;
+    padding: 8px 4px;
+}
+QCalendarWidget QToolButton {
+    background-color: transparent;
+    border: none;
+    color: #333333;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px;
+    margin: 2px;
+    border-radius: 6px;
+    icon-size: 16px; /* Задаем размер иконки */
+}
+QCalendarWidget QToolButton:hover {
+    background-color: #F0F0F0;
+}
+/* ИСПРАВЛЕНО: Указываем иконки для кнопок навигации */
+QCalendarWidget QToolButton#qt_calendar_prevmonth {
+    qproperty-icon: url(icons/chevron-left.svg);
+}
+QCalendarWidget QToolButton#qt_calendar_nextmonth {
+    qproperty-icon: url(icons/chevron-right.svg);
+}
+
+QCalendarWidget QSpinBox {
+    background-color: transparent;
+    border: none;
+    color: #333333;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0 5px;
+}
+
+QCalendarWidget QMenu {
+    background-color: #FFFFFF;
+    color: #333333;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    padding: 5px;
+}
+QCalendarWidget QMenu::item:selected {
+    background-color: #F0F0F0;
+}
+
+QCalendarWidget #qt_calendar_today {
+    font-weight: bold;
+    color: #0078D7;
+    background-color: #E8F0FE;
+    border-radius: 6px;
+}
+QCalendarWidget QTableView::item:selected {
+    border-radius: 6px;
+}
+QCalendarWidget QTableView::item:disabled {
+    color: #CCCCCC;
+}
+
+/* === СТИЛИ ДЛЯ ПОЛЕЙ ВВОДА ДАТЫ === */
+QDateEdit {
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 6px;
+    padding: 5px;
+    font-size: 13px;
+}
+
+QDateEdit:hover {
+    border-color: #0078D7;
+}
+
+QDateEdit::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+    border: none;
+}
+QDateEdit::down-arrow {
+    image: url(icons/chevron-down.svg);
+    width: 12px;
+    height: 12px;
+}
+
+
+/* Панель предпросмотра Markdown */
+#MarkdownPreview {
+    border: 1px solid #EAEAEA;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/* Вспомогательные стили */
+QToolTip {
+    background-color: #333333;
+    color: white;
+    border: 1px solid #444444;
+    padding: 5px;
+    border-radius: 4px;
+}
+QScrollBar:vertical {
+    border: none;
+    background: #FAFAFA;
+    width: 8px;
+    margin: 0px 0px 0px 0px;
+}
+QScrollBar::handle:vertical {
+    background: #D0D0D0;
+    min-height: 20px;
+    border-radius: 4px;
+}
+QScrollBar::handle:vertical:hover {
+    background: #B0B0B0;
+}
+
+/* === СТИЛИ ДЛЯ ТЕКСТОВОЙ ПАНЕЛИ ИНСТРУМЕНТОВ MARKDOWN === */
+#MarkdownToolbar {
+    background-color: #F5F5F5;
+    border-radius: 8px;
+    padding: 4px;
+    margin-bottom: 5px;
+}
+
+#ToolbarButton {
+    background-color: transparent;
+    border: 1px solid #D0D0D0;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 13px;
+    color: #333;
+    padding: 0 5px; 
+}
+
+#ToolbarButton:hover {
+    background-color: #E0E0E0;
+    border-color: #C0C0C0;
+}
+
+#ToolbarButton:pressed {
+    background-color: #D0D0D0;
+    border-color: #B0B0B0;
+}
+
+/* === СТИЛИ ДЛЯ КНОПОК РЕДАКТОРА ЗАМЕТОК === */
+#CloseEditorButton, #SaveNoteButton {
+    background-color: #F5F5F5;
+    color: #333333;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+#CloseEditorButton:hover, #SaveNoteButton:hover {
+    background-color: #EAEAEA;
+    border-color: #D0D0D0;
+}
+
+#SaveNoteButton {
+    background-color: #E8F0FE;
+    color: #0078D7;
+    border: none;
+}
+
+#SaveNoteButton:hover {
+    background-color: #DDE8FC;
+}
+
+#DeleteNoteButton {
+    background-color: transparent;
+    color: #D83B01; /* Оранжево-красный */
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+#DeleteNoteButton:hover {
+    background-color: #FFF1EE;
+    color: #A22C02;
+}
+
+#DeleteNoteButton:disabled {
+    color: #C8C6C4;
+    background-color: transparent;
+}
+
+
+/* === СТИЛИ ДЛЯ ВЫПАДАЮЩИХ МЕНЮ === */
+QMenu {
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    padding: 5px;
+    font-size: 13px;
+    color: #333333;
+}
+
+QMenu::item {
+    padding: 8px 20px;
+    border-radius: 6px;
+}
+
+QMenu::item:selected {
+    background-color: #F0F0F0;
+}
+
+QMenu::item:disabled {
+    color: #AAAAAA;
+}
+
+QMenu::separator {
+    height: 1px;
+    background-color: #EAEAEA;
+    margin: 4px 0px;
+}
+
+/* === СТИЛИ ДЛЯ СТАНДАРТНЫХ КНОПОК В ДИАЛОГАХ === */
+QDialogButtonBox QPushButton {
+    background-color: #F5F5F5;
+    color: #333333;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: bold;
+    min-width: 80px; /* Чтобы кнопки были одинаковой ширины */
+}
+
+QDialogButtonBox QPushButton:hover {
+    background-color: #EAEAEA;
+    border-color: #D0D0D0;
+}
+
+/* Акцентная кнопка OK/Apply */
+QDialogButtonBox QPushButton:default {
+    background-color: #E8F0FE;
+    color: #0078D7;
+    border: none;
+}
+
+QDialogButtonBox QPushButton:default:hover {
+    background-color: #DDE8FC;
+}
